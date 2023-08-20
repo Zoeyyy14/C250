@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Zoey Ma",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 113.33, "left": 3.34, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -32.8,
+      "left": 225.64,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -29.46,
+      "left": 35.52,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 78.26,
+      "left": -13.36,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 72.08,
+      "left": 198.26,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 7.85, "left": 96.43, "attrs": {} }
+  ],
+  "connections": [
+    [ "led2:A", "r1:2", "green", [ "v0" ] ],
+    [ "led1:A", "r2:2", "green", [ "v0" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v0" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "relay1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "relay1:IN", "r1:1", "green", [ "h0" ] ],
+    [ "relay1:NO", "r2:1", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
